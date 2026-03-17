@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Tic-Tac-Toe{% endblock %}
+{% block title %}Gomoku — Five in a Row{% endblock %}
 {% block content %}
 <div class="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-12 px-4">
-  <h1 class="text-4xl font-bold text-gray-900 mb-8">Tic-Tac-Toe</h1>
+  <h1 class="text-4xl font-bold text-gray-900 mb-8">Gomoku</h1>
   <div
-    data-island="tictactoe"
+    data-island="gomoku"
     class="bg-white rounded-xl shadow-lg p-8"
   >
     <noscript>
@@ -14,7 +14,7 @@
   </div>
   <div class="mt-8 flex gap-4 text-sm">
     <a href="/" class="text-blue-600 hover:underline">← Back to Hello</a>
-    <a href="/gomoku" class="text-blue-600 hover:underline">Play Gomoku →</a>
+    <a href="/tictactoe" class="text-blue-600 hover:underline">Play Tic-Tac-Toe →</a>
   </div>
 </div>
 {% endblock %}

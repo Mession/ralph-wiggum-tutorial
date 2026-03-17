@@ -14,6 +14,8 @@ def register_blueprints(app: Flask) -> None:
     """
     from .hello import hello_bp
     from .tictactoe import tictactoe_bp
+    from .gomoku import gomoku_bp
 
     app.register_blueprint(hello_bp)
     app.register_blueprint(tictactoe_bp)
+    app.register_blueprint(gomoku_bp)
