@@ -1,0 +1,12 @@
+Gomoku feature implementation notes:
+
+- @tanstack/react-virtual v3 installed for virtualized board (dual row+column virtualizers)
+- xStartsNext initial value must be false (not true) — tracks who starts NEXT game, not current
+- handleSizeSelect resets xStartsNext=false and xIsNext=true (X always starts first game of new size)
+- Sparse Map<string,Player> with cellKey('row,col') for board state — efficient for large grids
+- checkWin scans bidirectionally from last move in 4 directions, O(WIN_LENGTH) per direction
+- Cell uses absolute positioning with style prop from virtualizer (top/left/width/height)
+- VirtualBoard viewport is min(gridSize*CELL_SIZE, 560) for both dimensions
+- Phase state machine: setup→playing→over, Change Size returns to setup and resets scores
+- All 87 tests pass: 18 pytest + 23 vitest + 26 playwright + typecheck + lint clean
+- Pre-commit hooks: trailing-whitespace auto-fixes, mypy checks changed files
