@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Tic-Tac-Toe{% endblock %}
+{% block content %}
+<div class="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-12 px-4">
+  <h1 class="text-4xl font-bold text-gray-900 mb-8">Tic-Tac-Toe</h1>
+  <div
+    data-island="tictactoe"
+    class="bg-white rounded-xl shadow-lg p-8"
+  >
+    <noscript>
+      <p class="text-gray-600">JavaScript is required to play.</p>
+    </noscript>
+    <div class="animate-pulse text-gray-400 text-center">Loading game…</div>
+  </div>
+  <a href="/" class="mt-8 text-sm text-blue-600 hover:underline">← Back to Hello</a>
+</div>
+{% endblock %}
