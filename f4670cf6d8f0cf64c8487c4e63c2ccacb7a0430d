@@ -1,0 +1,11 @@
+Tic-Tac-Toe feature implementation notes:
+
+- All game logic is client-side only (no DB needed) per spec
+- Pre-commit mypy hook checks only changed files with strict settings — test methods need type annotations (used Any for client fixture since conftest is untyped)
+- Pre-commit trailing-whitespace hook auto-fixes files — be aware on first commit
+- Playwright browsers need manual install in fresh codespaces: npx playwright install chromium
+- React island pattern: mount function in index.tsx clears innerHTML before createRoot
+- Do NOT import React in .tsx files — project uses react-jsx transform with noUnusedLocals:true
+- data-testid=square on buttons is critical for E2E tests to avoid matching New Game button
+- Score updates computed synchronously from nextSquares before setState (React batching)
+- xStartsNext state tracks starting player alternation independently of xIsNext
